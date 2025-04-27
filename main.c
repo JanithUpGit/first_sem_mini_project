@@ -5,8 +5,10 @@
 
 int main() {
     int choice;
+    printf("\n=== Welcome to Uor Fot Hostel Management System ===\n");
     while (1) {
-        printf("\n=== Hostel Management System ===\n");
+        
+        printf("\n=== Manin Menu ===\n");
         printf("1. Add Student\n");
         printf("2. View Students\n");
         printf("3. Search Student\n");
