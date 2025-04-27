@@ -1,0 +1,2 @@
+gcc main.c student.c room.c -o hostel_system
+./hostel_system
