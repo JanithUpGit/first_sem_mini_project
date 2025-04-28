@@ -24,7 +24,7 @@ int main() {
             case 1: addStudent(); break;
             case 2: viewStudents(); break;
             case 3: searchStudent(); break;
-            case 4: updateContact(); break;
+            case 4: updateStudent(); break;
             case 5: deleteStudent(); break;
             case 6: viewAvailableRooms(); break;
             case 7: checkRoomOccupancy(); break;

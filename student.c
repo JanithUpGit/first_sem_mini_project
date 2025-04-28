@@ -86,7 +86,7 @@ void searchStudent() {
     fclose(fp);
 }
 
-void updateContact() {
+void updateStudent() {
     FILE *fp = fopen("students.dat", "r+");
     Student s;
     int tg;

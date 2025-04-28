@@ -5,7 +5,7 @@
 void addStudent();
 void viewStudents();
 void searchStudent();
-void updateContact();
+void updateStudent();
 void deleteStudent();
 
 #endif
