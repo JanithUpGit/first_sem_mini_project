@@ -14,10 +14,9 @@ int main() {
         printf("3. Search Student\n");
         printf("4. Update Contact\n");
         printf("5. Delete Student\n");
-        printf("6. Assign Room\n");
-        printf("7. View Available Rooms\n");
-        printf("8. Check Room Occupancy\n");
-        printf("9. Exit\n");
+        printf("6. View Available Rooms\n");
+        printf("7. Check Room Occupancy\n");
+        printf("8. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -27,10 +26,9 @@ int main() {
             case 3: searchStudent(); break;
             case 4: updateContact(); break;
             case 5: deleteStudent(); break;
-            case 6: assignRoom(); break;
-            case 7: viewAvailableRooms(); break;
-            case 8: checkRoomOccupancy(); break;
-            case 9: return 0;
+            case 6: viewAvailableRooms(); break;
+            case 7: checkRoomOccupancy(); break;
+            case 8: return 0;
             default: printf("Invalid choice. Try again!\n");
         }
     }

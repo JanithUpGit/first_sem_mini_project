@@ -1,14 +1,12 @@
 // structs.h
 #ifndef STRUCTS_H
 #define STRUCTS_H
-
-#define MAX 100
-
 typedef struct {
-    char name[MAX];
-    char regNo[MAX];
-    char contact[MAX];
-    char room[MAX];
+    int tgNo;
+    char name[50];
+    char gender[10];
+    int room;
+    char contact[20];
 } Student;
 
 #endif
