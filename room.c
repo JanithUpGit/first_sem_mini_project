@@ -62,10 +62,5 @@ void checkRoomOccupancy() {
             }
         }
         
-        if (roomStudentCount == 0) {
-            // Room is empty
-            // Optional: Uncomment below if you want to print empty rooms
-            // printf("\nRoom %d: Empty\n", room);
-        }
     }
 }
