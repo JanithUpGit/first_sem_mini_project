@@ -5,6 +5,7 @@
 #define NUMBER_OF_ROOMS 200
 
 void viewAvailableRooms() {
+
     FILE *fp = fopen("students.dat", "r");
     if (fp == NULL) {
         printf("Error opening file.\n");
@@ -31,7 +32,7 @@ void viewAvailableRooms() {
 }
 
 void checkRoomOccupancy() {
-    FILE *fp = fopen("students.dat", "rb"); // binary read
+    FILE *fp = fopen("students.dat", "rb");
     if (fp == NULL) {
         printf("Error opening file.\n");
         return;
