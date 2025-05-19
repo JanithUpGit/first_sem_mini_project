@@ -123,24 +123,33 @@ void updateStudent() {
 }
 
 void deleteStudent() {
-    FILE *fp = fopen("students.dat", "r");
-    FILE *temp = fopen("temp.dat", "w");
+    FILE *fp = fopen("students.dat", "rb");
+    FILE *temp = fopen("temp.dat", "wb");
+    if (fp == NULL || temp == NULL) {
+        printf("Error opening file.\n");
+        return;
+    }
+
     Student s;
     int tg;
-    printf("Enter Registration Number to delete: ");
-    scanf(" %d", &tg);
     int found = 0;
+
+    printf("Enter Registration Number to delete: ");
+    scanf("%d", &tg);
+
     while (fread(&s, sizeof(Student), 1, fp)) {
         if (s.tgNo == tg) {
-            fwrite(&s, sizeof(Student), 1, temp);
+            found = 1; // Skip writing this student to the new file
         } else {
-            found = 1;
+            fwrite(&s, sizeof(Student), 1, temp);
         }
     }
+
     fclose(fp);
     fclose(temp);
+
     remove("students.dat");
-    rename("temp.txt", "students.dat");
+    rename("temp.dat", "students.dat");
 
     if (found) {
         printf("Student Deleted Successfully.\n");
