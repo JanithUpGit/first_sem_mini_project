@@ -32,26 +32,34 @@ void viewAvailableRooms() {
 }
 
 void checkRoomOccupancy() {
+
+    // get file biranry for read 
     FILE *fp = fopen("students.dat", "rb");
+
+    // check file exist or not 
     if (fp == NULL) {
         printf("Error opening file.\n");
         return;
     }
-
+    // declare student list for get data from bat file
     Student students[1000]; 
+
+    // declare counter variable for count students
     int studentCount = 0;
 
-    
+    // find student count in each room
     while (fread(&students[studentCount], sizeof(Student), 1, fp)) {
         studentCount++;
     }
+
+    // close opened binary file
     fclose(fp);
 
     printf("\n--- Room Occupancy ---\n");
 
+    // find how meny spaces in each rooom
     for (int room = 0; room < NUMBER_OF_ROOMS; room++) {
         int roomStudentCount = 0;
-        
         
         for (int i = 0; i < studentCount; i++) {
             if (students[i].room == room) {
