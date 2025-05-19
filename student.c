@@ -94,17 +94,17 @@ void searchStudent() {
 }
 
 void updateStudent() {
-    FILE *fp = fopen("students.dat", "r+");
+    FILE *fp = fopen("students.dat", "r+"); //open file for both reading and writing
     Student s;
     int tg;
     printf("Enter Registration Number to update contact: ");
     scanf(" %d", &tg);getchar();
     int found = 0;
-    while (fread(&s, sizeof(Student), 1, fp)) {
-        if (s.tgNo == tg) {
+    while (fread(&s, sizeof(Student), 1, fp)) {  //Start the loop 
+        if (s.tgNo == tg) { // check current tg and enter tg
 
             printf("Enter New Name: ");
-            fgets(s.name, sizeof(s.name), stdin);
+            fgets(s.name, sizeof(s.name), stdin); // read full line input
             s.name[strcspn(s.name, "\n")] = 0;
         
             printf("Enter New Gender: ");
@@ -115,7 +115,7 @@ void updateStudent() {
             scanf("%d", &s.room);
             getchar();
             printf("Enter New Contact Number: ");
-            scanf(" %[^\n]", s.contact);
+            scanf(" %[^\n]", s.contact); // read full line
             fseek(fp, -sizeof(Student), SEEK_CUR);
             fwrite(&s, sizeof(Student), 1, fp);
             printf("Contact Updated Successfully.\n");
