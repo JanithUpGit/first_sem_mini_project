@@ -105,7 +105,7 @@ void updateStudent() {
 
             printf("Enter New Name: ");
             fgets(s.name, sizeof(s.name), stdin); // read full line input
-            s.name[strcspn(s.name, "\n")] = 0;
+            s.name[strcspn(s.name, "\n")] = 0; // remove new line character
         
             printf("Enter New Gender: ");
             fgets(s.gender, sizeof(s.gender), stdin);
@@ -116,7 +116,7 @@ void updateStudent() {
             getchar();
             printf("Enter New Contact Number: ");
             scanf(" %[^\n]", s.contact); // read full line
-            fseek(fp, -sizeof(Student), SEEK_CUR);
+            fseek(fp, -sizeof(Student), SEEK_CUR); // overwrite student record
             fwrite(&s, sizeof(Student), 1, fp);
             printf("Contact Updated Successfully.\n");
             found = 1;
