@@ -45,22 +45,29 @@ void addStudent() {
 
 
 void viewStudents()
-{
+{   
+    // read student data from binary file
     FILE *fp = fopen("students.dat", "r");
-    Student s;
 
+    // check file alredy exist
     if (fp == NULL)
     {
         printf("No records found.\n");
         return;
     }
 
+    // make student temparaly save variable
+    Student s;
+
     printf("\n--- Student List ---\n\n");
+
+    // Read and print each Student record from the file one by one
     while (fread(&s, sizeof(Student), 1, fp))
     {
         printf("Name: %s\nTgNo: Tg %d\nContact: %s\nRoom: %d\nGender %s \n\n\n", s.name, s.tgNo, s.contact, s.room, s.gender);
     }
 
+    // close file
     fclose(fp);
 }
 
