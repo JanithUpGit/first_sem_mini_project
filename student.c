@@ -16,7 +16,7 @@ void addStudent() {
     printf("Student Admission Form\n");
     printf("===========================\n\n");
 
-    printf("Enter ID: ");
+    printf("Enter ID Tg: ");
     scanf("%d", &student.tgNo);
     while (getchar() != '\n'); // Clear input buffer
 
@@ -141,7 +141,7 @@ void deleteStudent() {
     int tg;
     int found = 0;
 
-    printf("Enter Registration Number to delete: ");
+    printf("Enter Registration Number to delete (without Tg): ");
     scanf("%d", &tg);
 
     while (fread(&s, sizeof(Student), 1, fp)) {
