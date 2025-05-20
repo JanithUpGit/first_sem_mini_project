@@ -6,18 +6,23 @@
 
 void viewAvailableRooms() {
 
-    FILE *fp = fopen("students.dat", "r");
+    FILE *fp = fopen("students.dat", "rb");
     if (fp == NULL) {
         printf("Error opening file.\n");
         return;
     }
 
+    // declare student variable to temporily hold data while reading
     Student s;
+
+    // initialize an array to count how many students are in each room
     int roomCounts[NUMBER_OF_ROOMS] = {0};
 
-    
+    // find student count in each room
     while (fread(&s, sizeof(Student), 1, fp)) {
         if (s.room >= 0 && s.room < NUMBER_OF_ROOMS) {
+
+            // Increment increase the count for thar room number by 1
             roomCounts[s.room]++;
         }
     }
